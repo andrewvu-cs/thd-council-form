@@ -1,0 +1,40 @@
+  // <form onSubmit={handleSubmit(onSubmit)}>
+    //   <input type="text" placeholder="First name" {...register("First name", {required: true, maxLength: 80})} />
+    //   <input type="text" placeholder="Last name" {...register("Last name", {required: true, maxLength: 100})} />
+    //   <input type="text" placeholder="Business Name" {...register("Business Name", {})} />
+    //   <input type="text" placeholder="Email" {...register("Email", {required: true, pattern: /^\S+@\S+$/i})} />
+    //   <input type="tel" placeholder="Phone number" {...register("Phone number", {required: true, maxLength: 12})} />
+    //   <input type="text" placeholder="Address" {...register("Address", {})} />
+    //   <input type="text" placeholder="City" {...register("City", {})} />
+    //   <input type="text" placeholder="State" {...register("State", {})} />
+    //   <input {...register("Zip", { required: true })} type="radio" value="Yes" />
+    //   <input {...register("Zip", { required: true })} type="radio" value="No" />
+    //   <input type="text" placeholder="Instagram Handle" {...register("Instagram Handle", {required: true})} />
+    //   <input type="text" placeholder="Facebook Page" {...register("Facebook Page", {required: true})} />
+    //   <input type="url" placeholder="Website" {...register("Website", {required: true})} />
+
+    //   <input {...register("Have you served as a Design Council Member previously?", { required: true })} type="radio" value="Yes" />
+    //   <input {...register("Have you served as a Design Council Member previously?", { required: true })} type="radio" value="No" />
+    //   <textarea {...register("How did you hear about the Thermador Design Council?", {required: true})} />
+    //   <input type="number" placeholder="How many years have you been practicing residential interior design?" {...register("How many years have you been practicing residential interior design?", {required: true})} />
+
+    //   <input {...register("Do you own your own design firm?")} type="radio" value="Yes" />
+    //   <input {...register("Do you own your own design firm?")} type="radio" value="No" />
+    //   <input type="checkbox" placeholder="Do you have any design specialties or focuses? Select all that apply?" {...register("Do you have any design specialties or focuses? Select all that apply?", {})} />
+    //   <textarea {...register("Any additional specialties that were not listed above?", {required: true})} />
+    //   <select {...register("Are you a Certified Residential Kitchen & Bath Designer?", { required: true })}>
+    //     <option value="Yes">Yes</option>
+    //     <option value="No">No</option>
+    //   </select>
+    //   <textarea {...register("Do you have any other certifications (LEED, NCIDQ, etc)?", {required: true})} />
+    //   <input {...register("Do you specify Thermador products")} type="radio" value="Yes" />
+    //   <input {...register("Do you specify Thermador products")} type="radio" value="No" />
+    //   <input type="number" placeholder="If so, about how many projects per year do you specify Thermador products?" {...register("If so, about how many projects per year do you specify Thermador products?", {required: true})} />
+    //   <input {...register("Are you currently registered as a Thermador Star Partner program?", { required: true })} type="radio" value="Yes" />
+    //   <input {...register("Are you currently registered as a Thermador Star Partner program?", { required: true })} type="radio" value="No" />
+    //   <textarea {...register("How would you describe your design style and brand?", {required: true})} />
+    //   <textarea {...register("Tell us why you should be considered the Thermador Design Council:", {required: true})} />
+
+    //   <input type="submit" />
+    //   <p>hello</p>
+    // </form>

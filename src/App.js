@@ -1,211 +1,295 @@
-import { useForm } from "react-hook-form";
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
-import Form from 'react-bootstrap/Form';
+// import {Form as FormBS} from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import { FloatingLabel } from "react-bootstrap";
+import { Formik, Field, Form} from 'formik';
+import Header from './components/Header/Header';
 
 export default function App() {
-  const { register, handleSubmit } = useForm();
-  const onSubmit = data => console.log(data);
 
   return (
-    <Form>
-      <Row className="mb-3">
-        <Form.Group as={Col} controlId="formGridFirstName">
-          <FloatingLabel
-            controlId="floatingSelectGrid"
-            label="First Name*"
-          >
-            <Form.Control size="sm" required type="text" placeholder="First Name" />
-          </FloatingLabel>
-        </Form.Group>
+          <div>
+            <Header title="Thermador Design Council Application"/>
+            
 
-        <Form.Group as={Col} controlId="formGridLastName">
-          <FloatingLabel
-            controlId="formGridLastName"
-            label="Last Name*"
-          >
-            <Form.Control required type="text" placeholder="Last Name" />
-          </FloatingLabel>
-        </Form.Group>
-      </Row>
+          <Formik
+              initialValues={{ }}
+              onSubmit={(values, { setSubmitting }) => {
+                console.log(values);
+                setTimeout(() => {
+                  alert(JSON.stringify(values, null, 2));
+                  setSubmitting(false);
+                }, 1000);
+              }}
+              >
+              {({ isSubmitting }) => (
+                <Form>
+                    <Row className="mb-3">
+                      <Col>
+                        <div className="form-group">
+                            <FloatingLabel
+                                  controlId="First Name"
+                                  label="First Name*"
+                                  htmlFor="Q1"
+                                  >
+                                <Field name="Q1" className="form-control" type="text" required placeholder="First Name*"/>
+                            </FloatingLabel>
+                        </div>
+                      </Col>
+                      <Col>
+                      <div className="form-group">
+                            <FloatingLabel
+                                  controlId="Last Name"
+                                  label="Last Name*"
+                                  htmlFor="Q2"
+                                  >
+                                <Field name="Q2" className="form-control" type="text" required placeholder="Last Name*"/>
+                            </FloatingLabel>
+                        </div>
+                      </Col>
+                    </Row>
+                    
+                    <Row className="mb-3">
+                      <div className='form-group'>
+                        <FloatingLabel
+                          controlId="floatingSelectGrid"
+                          label="Business Name*"
+                          htmlFor="Q3"
+                          >
+                            <Field name="Q3" className="form-control" required type="text" placeholder="Business Name" />
+                        </FloatingLabel>
+                          </div>
+                    </Row>
+                      
+  
+                    <Row className="mb-3"> 
+                      <Col>
+                        <div className="form-group">
+                          <FloatingLabel
+                          controlId="formGridFormEmail"
+                          label="Email*"
+                          htmlFor="Q4"
+                          >
+                                <Field name="Q4" className="form-control" required type="email" placeholder="Email*"/>
+                          </FloatingLabel>
+                        </div>
+                      </Col>
+                      <Col>
+                        <div className="form-group">
+                          <FloatingLabel
+                          controlId="formGridFormEmail"
+                          label="Phone Number*"
+                          htmlFor="Q5"
+                          >
+                                <Field name="Q5" className="form-control" required type="tel" placeholder="PhoneNumber*"/>
+                          </FloatingLabel>
+                        </div>
+                      </Col>
+                  </Row>
 
+                  <Row className="mb-3"> 
+                      <Col>
+                        <div className="form-group">
+                          <FloatingLabel
+                          controlId="formGridFormEmail"
+                          label="City*"
+                          htmlFor="Q6"
+                          >
+                                <Field name="Q6" className="form-control" required type="text" placeholder="City*"/>
+                          </FloatingLabel>
+                        </div>
+                      </Col>
+                      <Col>
+                        <div className="form-group">
+                          <FloatingLabel
+                          controlId="formGridFormEmail"
+                          label="State*"
+                          htmlFor="Q7"
+                          >
+                                <Field name="Q7" className="form-control" required type="text" placeholder="State"/>
+                          </FloatingLabel>
+                        </div>
+                      </Col>
+                      <Col>
+                            
+                        <div className="form-group">
+                          <FloatingLabel
+                          controlId="formGridFormEmail"
+                          label="Zip Code*"
+                          htmlFor="Q8"
+                          >
+                                <Field name="Q8" className="form-control" required type="number" placeholder="Zip*"/>
+                          </FloatingLabel>
+                        </div>
+                      </Col>
+                  </Row>
 
-      <Row className="mb-3">
-        <Form.Group as={Col} controlId="formGridBusinessName">
-          <FloatingLabel
-            controlId="floatingSelectGrid"
-            label="Business Name*"
-          >
-            <Form.Control required type="text" placeholder="Business Name" />
-          </FloatingLabel>
-        </Form.Group>
+                  <Row className="mb-3"> 
+                      <Col>
+                        <div className="form-group">
+                          <FloatingLabel
+                          controlId="formGridFormEmail"
+                          label="Instagram Handle*"
+                          htmlFor="Q9"
+                          >
+                                <Field name="Q9" className="form-control" required type="text" placeholder="Instagram Handle*"/>
+                          </FloatingLabel>
+                        </div>
+                      </Col>
+                      <Col>
+                        <div className="form-group">
+                          <FloatingLabel
+                          controlId="formGridFormEmail"
+                          label="Facebook Page*"
+                          htmlFor="Q10"
+                          >
+                                <Field name="Q10" className="form-control" required type="text" placeholder="Facebook Page*"/>
+                          </FloatingLabel>
+                        </div>
+                      </Col>
+                  </Row>
 
-      </Row>
+                  <Row className="mb-3">
+                      <div className='form-group'>
+                        <FloatingLabel
+                          controlId="floatingSelectGrid"
+                          label="Website*"
+                          htmlfor="Q11"
+                          >
+                            <Field name="Q11" className="form-control" required type="url" placeholder="Website" />
+                        </FloatingLabel>
+                          </div>
+                  </Row>
 
+                  <div className="form-group mb-3">
+                          <label>Have you served as a Design Council Member previously?</label>
+                          <div class="form-check">
+                              <Field className="form-check-input" type="radio" name="Q12" id="gridRadios1" value="Yes" />
+                              <label className="form-check-label" htmlFor="Q12">Yes</label>
+                            </div>
+                          <div class="form-check">
+                              <Field className="form-check-input" type="radio" name="Q12" id="gridRadios2" value="No" />
+                              <label className="form-check-label" htmlFor="Q12">No</label>
+                          </div>
+                  </div>  
+                      <div className="form-group mb-3">
+                          <label htmlFor="Q13">How did you hear about the Thermador Design Council?</label>
+                          <Field name="Q13" className="form-control" as="textarea" rows={3}/>
+                      </div>
 
-      <Row className="mb-3">
-        <Form.Group as={Col} controlId="formGridFormEmail">
-          <FloatingLabel
-            controlId="formGridFormEmail"
-            label="Email*"
-          >
-            <Form.Control required type="email" placeholder="Email*" />
-          </FloatingLabel>
-        </Form.Group>
+                      <div className="form-group mb-3">
+                          <label>How many years have you been practicing residential interior design?</label>
+                          <Field name="Q14" className="form-control" required type="number" placeholder="0"/>   
+                      </div>
 
-        <Form.Group as={Col} controlId="formGridPhoneNumber">
-          <FloatingLabel
-            controlId="formGridPhoneNumber"
-            label="Phone Number*"
-          >
-            <Form.Control required type="number" placeholder="Phone Number*" />
-          </FloatingLabel>
-        </Form.Group>
-      </Row>
+                      <div className="form-group mb-3">
+                          <label>Do you own your own design firm?</label>
+                          <div class="form-check">
+                              <Field className="form-check-input" type="radio" name="Q15" id="gridRadios1" value="Yes" />
+                              <label className="form-check-label" htmlFor="Q15">Yes</label>
+                            </div>
+                          <div class="form-check">
+                              <Field className="form-check-input" type="radio" name="Q15" id="gridRadios2" value="No" />
+                              <label className="form-check-label" htmlFor="Q15">No</label>
+                          </div>
+                    </div>  
+                    {/* Question 16 */}
+                    <div className="form-group mb-3">
+                      <div class="form-check">
+                      <label className="form-check-label" htmlFor="Q16">
+                          <Field name="Q16" className="form-check-input" type="checkbox" id="Q16-1" value="Residential Kitchen & Bath" />
+                          Residential Kitchen & Bath</label>
+                      </div>
+                      <div class="form-check">
+                      <Field name="Q16" className="form-check-input" type="checkbox" id="Q16-2" value="Remodeling"/>
+                        <label className="form-check-label" htmlFor="Q16">Remodeling</label>
+                      </div>
+                      <div class="form-check">
+                      <Field name="Q16" className="form-check-input" type="checkbox" id="Q16-3" value="Sustainable Design"/>
+                        <label className="form-check-label" htmlFor="Q16">Sustainable Design</label>
+                      </div>
+                      <div class="form-check">
+                      <Field name="Q16" className="form-check-input" type="checkbox" id="Q16-4" value="Whole Home Design"/>
+                        <label className="form-check-label" htmlFor="Q16">Whole Home Design</label>
+                      </div>
+                      <div class="form-check">
+                      <Field name="Q16" className="form-check-input" type="checkbox" id="Q16-5" value="Connect Home Solutions"/>
+                        <label className="form-check-label" htmlFor="Q16">Connect Home Solutions</label>
+                      </div>
+                      <div class="form-check">
+                      <Field name="Q16" className="form-check-input" type="checkbox" id="Q16-6" value="Multi-Family/High-Rise Developments"/>
+                        <label className="form-check-label" htmlFor="Q16">Multi-Family/High-Rise Developments</label> 
+                      </div>
+                    </div>
 
+                    <div className="form-group mb-3">
+                          <label htmlFor="Q17">Any additional specialties that were not listed above?</label>
+                          <Field name="Q17" className="form-control" as="textarea" rows={3}/>
+                      </div>
+                      <div className="form-group mb-3">
+                          <label>Are you a Certied Residential Kitchen & Bath Designer</label>
+                          <div class="form-check">
+                              <Field className="form-check-input" type="radio" name="Q18" id="gridRadios1" value="Yes" />
+                              <label className="form-check-label" htmlFor="Q18">Yes</label>
+                            </div>
+                          <div class="form-check">
+                              <Field className="form-check-input" type="radio" name="Q18" id="gridRadios2" value="No" />
+                              <label className="form-check-label" htmlFor="Q18">No</label>
+                          </div>
+                    </div>
 
-      <Row className="mb-3">
-        <Form.Group as={Col} controlId="formGridAddress">
-          <FloatingLabel
-            controlId="formGridAddress"
-            label="Address*"
-          >
-            <Form.Control required type="text" placeholder="Address*" />
-          </FloatingLabel>
-        </Form.Group>
-      </Row>
+                    <div className="form-group mb-3">
+                          <label htmlFor="Q19">Do you have any other certications (LEED,NCDIQ, etc.)?</label>
+                          <Field name="Q19" className="form-control" as="textarea" rows={3}/>
+                      </div>
 
+                    <div className="form-group mb-3">
+                          <label>Do you specify Thermador products?</label>
+                          <div class="form-check">
+                              <Field className="form-check-input" type="radio" name="Q20" id="gridRadios1" value="Yes" />
+                              <label className="form-check-label" htmlFor="Q20">Yes</label>
+                            </div>
+                          <div class="form-check">
+                              <Field className="form-check-input" type="radio" name="Q20" id="gridRadios2" value="No" />
+                              <label className="form-check-label" htmlFor="Q20">No</label>
+                          </div>
+                    </div>  
+                        
+                    <div className="form-group mb-3">
+                          <label>If so, about how many projects per year do you specify THermador products?</label>
+                          <Field name="Q21" className="form-control" required type="number" placeholder="0"/>   
+                      </div>
+                    
+                      <div className="form-group mb-3">
+                          <label>Are you currently registered as a Thermador Star Partner program</label>
+                          <div class="form-check">
+                              <Field className="form-check-input" type="radio" name="Q22" id="gridRadios1" value="Yes" />
+                              <label className="form-check-label" htmlFor="Q22">Yes</label>
+                            </div>
+                          <div class="form-check">
+                              <Field className="form-check-input" type="radio" name="Q22" id="gridRadios2" value="No" />
+                              <label className="form-check-label" htmlFor="Q22">No</label>
+                          </div>
+                    </div>
 
-      <Row className="mb-3">
-        <Form.Group as={Col} controlId="formGridCity">
-          <FloatingLabel
-            controlId="formGridCity"
-            label="City*"
-          >
-            <Form.Control required type="text" placeholder="City*" />
-          </FloatingLabel>
-        </Form.Group>
+                    <div className="form-group mb-3">
+                          <label htmlFor="Q23">How would you describe your design style and brand?</label>
+                          <Field name="Q23" className="form-control" as="textarea" rows={3}/>
+                      </div>
 
-        <Form.Group as={Col} controlId="formGridState">
-          <FloatingLabel controlId="formGridState" label="State*">
-            <Form.Select required aria-label="Floating label select example">
-              <option>Please select your state</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
-            </Form.Select>
-          </FloatingLabel>
-        </Form.Group>
-
-        <Form.Group as={Col} controlId="formGridZip">
-          <FloatingLabel
-            controlId="formGridZip"
-            label="Zip*"
-          >
-            <Form.Control required type="number" placeholder="Zip*" />
-          </FloatingLabel>
-        </Form.Group>
-      </Row>
-
-      <Row className="mb-3">
-        <Form.Group as={Col} controlId="formGridInstagramHandle">
-          <FloatingLabel
-            controlId="formGridInstagramHandle"
-            label="Instagram Handle*"
-          >
-            <Form.Control required type="text" placeholder="Instagram Handle*" />
-          </FloatingLabel>
-        </Form.Group>
-
-        <Form.Group as={Col} controlId="formGridFacebook">
-          <FloatingLabel
-            controlId="formGridFacebook"
-            label="Facebook*"
-          >
-            <Form.Control required type="text" placeholder="Facebook*" />
-          </FloatingLabel>
-        </Form.Group>
-      </Row>
-
-      <Row className="mb-3">
-        <Form.Group as={Col} controlId="formGridWebsite">
-          <FloatingLabel
-            controlId="formGridWebsite"
-            label="Website*"
-          >
-            <Form.Control required type="url" placeholder="Website*" />
-          </FloatingLabel>
-        </Form.Group>
-      </Row>
-
-      <Form.Group>
-        <Form.Label>
-          Have you served as a Design Council Member previously?
-        </Form.Label>
-      {['radio'].map((type) => (
-        <div key={`inline-${type}`} className="mb-3">
-          <Form.Check
-            inline
-            label="Yes"
-            name="Have you served as a Design Council Member previously?"
-            type={type}
-            id={`inline-${type}-1`}
-          />
-          <Form.Check
-            inline
-            label="No"
-            name="Have you served as a Design Council Member previously?"
-            type={type}
-            id={`inline-${type}-2`}
-          />
-        </div>
-      ))}
-   </Form.Group>
-
-   <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-        <Form.Label>How did you hear about the Thermador Design Council?</Form.Label>
-        <Form.Control as="textarea" rows={3} />
-    </Form.Group>
-
-    <Form.Group>
-        <Form.Label>
-          Are you currently registered as a Thermador Star Partner program?
-        </Form.Label>
-      {['radio'].map((type) => (
-        <div key={`inline-${type}`} className="mb-3">
-          <Form.Check
-            inline
-            label="Yes"
-            name="Are you currently registered as a Thermador Star Partner program?"
-            type={type}
-            id={`inline-${type}-1`}
-          />
-          <Form.Check
-            inline
-            label="No"
-            name="Are you currently registered as a Thermador Star Partner program?"
-            type={type}
-            id={`inline-${type}-2`}
-          />
-        </div>
-      ))}
-   </Form.Group>
-
-    <Form.Group className="mb-3" controlId="How would you describe your design style and brand?">
-        <Form.Label>How would you describe your design style and brand?</Form.Label>
-        <Form.Control as="textarea" rows={3} />
-    </Form.Group>
-
-    <Form.Group className="mb-3" controlId="Tell us why you should be considered for the Thermador Design Council?">
-        <Form.Label>Tell us why you should be considered for the Thermador Design Council?</Form.Label>
-        <Form.Control as="textarea" rows={3} />
-    </Form.Group>
-
-      <Button variant="primary" type="submit">
-        Submit
-      </Button>
-    </Form>
+                      <div className="form-group mb-3">
+                          <label htmlFor="Q24">Tell us why you should be considered for the Thermador Design Council</label>
+                          <Field name="Q24" className="form-control" as="textarea" rows={3}/>
+                      </div>
+  
+                      <div className="form-group">
+                          <button type="submit" className="btn btn-primary" disabled={isSubmitting}>{isSubmitting ? "Please wait..." : "Submit"}</button>
+                    </div>
+  
+                  </Form>
+              )}
+          </Formik>
+          </div>
   );
 }

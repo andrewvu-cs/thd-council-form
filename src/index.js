@@ -8,9 +8,9 @@ import { Router } from 'react-router-dom';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* <Router basename='/thd-council-form'> */}
+    <Router basename='/thd-council-form'>
       <App />
-    {/* </Router> */}
+    </Router>
   </React.StrictMode>
 );
 

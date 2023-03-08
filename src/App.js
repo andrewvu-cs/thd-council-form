@@ -2,7 +2,7 @@ import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 // import {Form as FormBS} from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
-import { FloatingLabel } from "react-bootstrap";
+import { FloatingLabel, Image } from "react-bootstrap";
 import { Formik, Field, Form} from 'formik';
 import Header from './components/Header/Header';
 
@@ -10,8 +10,34 @@ export default function App() {
 
   return (
           <div>
+            <div className="imgContainer">
+            <Image src="https://12c6c18f49b654b5531d-0e75373fe5b6bfcd6c0416c6717bdbd4.ssl.cf1.rackcdn.com/thermador-black-desktop.png" fluid/>
+            </div>
             <Header title="Thermador Design Council Application"/>
-            
+            <h2>What is the Thermador Design Council?</h2>
+            <p>The Thermador Design Council is an industry forum where interior designers are trade professionals are trusted to provide insights that help
+              Thermador create an exceptional design and consumer experience--and ultimately help shape the Thermador brand of tomorrow.
+            </p>
+            <h2>Appointed Design Council Members will:</h2>
+            <ul>
+              <div>
+              <li>Share knowledge, best practices and consumer insights</li>
+              <li>Discuss the types of challenges that design professionals face during the kitchen design process</li>
+              </div>
+              <div>
+              <li>Express ideas and share new trends and design perspectives</li>
+              <li>Inform product development and design</li>
+              <li>Commit to a 3-year term</li>
+
+              </div>
+            </ul>
+            <p>The Thermador Industrial Design, Product Marketing and Brand Management teams take the opinioins, ideas and knowledge of our Design Council Members
+              very seriously and we foster an open, hones and transparent enviornment.
+            </p>
+            <p>If you would like to be part of this exceptional movement, please complete and return the below questionnaire. Application period closed August 31, 
+              2023</p>
+            <p><i>Note: All fields required. [Open text fields]</i></p>
+
 
           <Formik
               initialValues={{ }}
@@ -196,6 +222,7 @@ export default function App() {
                     </div>  
                     {/* Question 16 */}
                     <div className="form-group mb-3">
+                      <label>Do you have any design specialties or focuses? Select all that apply.</label>
                       <div class="form-check">
                       <label className="form-check-label" htmlFor="Q16">
                           <Field name="Q16" className="form-check-input" type="checkbox" id="Q16-1" value="Residential Kitchen & Bath" />
@@ -257,12 +284,12 @@ export default function App() {
                     </div>  
                         
                     <div className="form-group mb-3">
-                          <label>If so, about how many projects per year do you specify THermador products?</label>
+                          <label>If so, about how many projects per year do you specify Thermador products?</label>
                           <Field name="Q21" className="form-control" required type="number" placeholder="0"/>   
                       </div>
                     
                       <div className="form-group mb-3">
-                          <label>Are you currently registered as a Thermador Star Partner program</label>
+                          <label>Are you currently registered as a Thermador Star® Partner program</label>
                           <div class="form-check">
                               <Field className="form-check-input" type="radio" name="Q22" id="gridRadios1" value="Yes" />
                               <label className="form-check-label" htmlFor="Q22">Yes</label>
